@@ -1,0 +1,59 @@
+@use 'abstracts/theme' as theme;
+@use 'abstracts/mixins' as mixins;
+
+.mark-div {
+  outline: 2px solid theme.$outlineColor;
+}
+
+.container {
+  outline-offset: -5px;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: theme.$mainBg;
+}
+
+.resting {
+  background: theme.$restingBg;
+}
+
+.flexCenterColumn {
+  @include mixins.flexCenterColumn;
+}
+
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  color: theme.$lineColor;
+  text-transform: uppercase;
+  justify-content: space-evenly;
+
+  .title {
+    font-size: theme.$titleSize;
+    flex-basis: 20rem;
+  }
+
+  .countdown {
+    flex-basis: 15rem;
+    font-size: theme.$timerSize;
+    flex-direction: row;
+  }
+
+  .separator {
+    //animation: pulse 1s infinite;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+}
+
+@keyframes pulse {
+  from { visibility: visible; }
+  to   { visibility: hidden; }
+}
